@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import {
-  Button,
   Flex,
-  FormControl,
-  FormLabel,
   Heading,
-  Input,
   Stack,
   Image,
   Text,
@@ -15,7 +11,6 @@ import {
 Box
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import { CheckIcon, EmailIcon, InfoIcon } from '@chakra-ui/icons'
 import './Home.css'
 
 

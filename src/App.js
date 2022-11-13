@@ -12,8 +12,8 @@ import VotingScheme from './VotingScheme/VotingScheme'
 import { Context } from "./Context";
 import { useState } from 'react';  
 import Home from './Home/Home'
-import Invitation from './Invitation'
-import ResultNotification from './ResultNotification'
+import Invitation from './letter/Invitation'
+import ResultNotification from './letter/ResultNotification'
 
 function App() {
   const pathname = window.location.pathname;

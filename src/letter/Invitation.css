@@ -1,0 +1,17 @@
+.invitation-letter-text{
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.invitation-letter-text p{
+    margin-top: 25px;
+}
+
+.blue-btn{
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.blue-btn a{
+    color: #FFFFFF !important;
+} 
