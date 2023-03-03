@@ -5,8 +5,6 @@ let user = new Parse.User();
 user.set("username", ID);
 user.set("password", ID);
 user.set("VerificationCode", "");
-user.set("Vote", "");
-user.set("ProlificID", ID);
 try {
   await user.signUp();
 } catch (error) {
