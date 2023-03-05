@@ -40,7 +40,8 @@ export default function Info1() {
   };
 
   const downloadInstructions = () => {
-    downloadFile(Instructions);
+    downloadFile(Instructions, "General-Election-2023.pdf"
+    );
     setDownloaded(true);
     if (checked) {
       setDisabled(false);

@@ -65,9 +65,10 @@ export default function VerificationCode() {
     const fileContent =
       "data:text/plain;charset=utf-8," +
       encodeURIComponent(
-        `With this code you can verify the correctness of your vote in the General Election 2023: ${verificationCode}`
+        `With this code you can verify the correctness of your vote in the General Election 2023: ${voter.attributes.VerificationCode}`
       );
-    downloadFile(fileContent);
+    const title = "Verification-Code_General-Election-2023.txt"
+    downloadFile(fileContent, title);
   }
 
   function generateCode() {
