@@ -42,7 +42,7 @@ function PopOver({ vote }) {
             to vote for:
           </Text>
           <Text className="pop-over-text">{vote}</Text>
-          <Flex justifyItems={"space-between"}>
+          <Flex>
             <PopoverCloseButton className="no-button">No</PopoverCloseButton>
             <Button className="blue-btn" mt={0} onClick={handleSubmit}>
               Yes
