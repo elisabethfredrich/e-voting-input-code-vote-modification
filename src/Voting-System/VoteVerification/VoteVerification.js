@@ -30,11 +30,13 @@ export default function VoteVerification() {
 
   let results = new Set(Results.votes);
 
+if(voter!==null){
   results.add({
     id: voter.id,
     vote: voter.attributes.BBVote,
     code: voter.attributes.VerificationCode,
   });
+}
 
   results = Array.from(results);
   results.sort((a, b) => {
