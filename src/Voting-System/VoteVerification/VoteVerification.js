@@ -22,6 +22,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import getCurrentUser from "../../API/Voter";
 import Navbar from "../Navbar/Navbar";
+import Result from "../../assets/Result.png";
+import Result2 from "../../assets/Results2.png";
+import Result4 from "../../assets/Results4.png";
 
 export default function VoteVerification() {
   const [input, setInput] = useState("");
@@ -30,13 +33,13 @@ export default function VoteVerification() {
 
   let results = new Set(Results.votes);
 
-if(voter!==null){
-  results.add({
-    id: voter.id,
-    vote: voter.attributes.BBVote,
-    code: voter.attributes.VerificationCode,
-  });
-}
+  if (voter !== null) {
+    results.add({
+      id: voter.id,
+      vote: voter.attributes.BBVote,
+      code: voter.attributes.VerificationCode,
+    });
+  }
 
   results = Array.from(results);
   results.sort((a, b) => {
@@ -110,59 +113,82 @@ if(voter!==null){
   return (
     <div>
       <Navbar />
-      <div className="outer-page-container">
+      {/* <div className="outer-page-container"> */}
+
+      <Grid className="container-outer-page">
         <div className="inner-page-container-wide">
-          <h1 className="blue-text">Vote verification</h1>
+          <Grid className="video-and-results">
+            <h3 className="headline-results">
+              Result of General Election 2023
+            </h3>
+            <img className="result-diagram"src={Result4} width="380" height="220" alt="result"></img>
 
-          <Text>
-            Please use your verification code to check, if your vote has been
-            counted correctly. This is important, because it helps to ensure
-            that the election has proceeded correctly.
-          </Text>
+            <h3 className="headline-results">Demo video</h3>
+            <iframe
+              className="demo-video"
+              width="380"
+              height="220"
+              src="https://www.youtube.com/embed/pV51zCm4NL4"
+            ></iframe>
+          </Grid>
+        </div>
 
-          <Text className="bold-text text-margin-top">
-            Verify by either putting your verification code into the search
-            field or by looking for it in the ordered list below.{" "}
-            <Link onClick={() => navigate("/info")}>
-              <span className="material-symbols-outlined blue-icon small-icon">
-                info
-              </span>
-            </Link>
-          </Text>
-          <Box className="info-box">
-            <Text className="info-text">
-              <span className="bold-text">NB!</span> If your vote is not counted
-              correctly or you cannot find your verification code, please follow
-              the guidelines in the instruction paper.
-            </Text>
-          </Box>
+        {/*   <Grid className="verification-content"" */}
 
-          <InputGroup marginTop="2rem">
-            <InputLeftElement
-              pointerEvents="none"
-              children={<SearchIcon color="var(--primary_blue)" />}
-            />
-            <Input
-              className="input-field"
-              value={input}
-              onChange={handleInputChange}
-              onKeyUp={search}
-              placeholder={"Search for verification code here"}
-              type="search"
-              marginBottom={"2rem"}
-            />
-          </InputGroup>
+        <Grid className="verification-content">
+          <div className="inner-page-container-wide">
+            <h1 className="blue-text">Vote verification</h1>
 
-          <Box id="error-text" className="info-box error-text-bb">
-            <h3>No such verification code exists</h3>
             <Text>
-              Have you typed in your verification code correctly? Be aware of
-              correct use of lower- and uppercase letters. If your verification
-              code still does not show, please follow the instruction paper.
+              Please use your verification code to check, if your vote has been
+              stored correctly. This is important, because it helps to ensure
+              that the election has proceeded correctly.
             </Text>
-          </Box>
 
-          {/*   <Box
+            <Text className="bold-text text-margin-top">
+              Verify by either putting your verification code into the search
+              field or by looking for it in the ordered list below.{" "}
+              <Link onClick={() => navigate("/info")}>
+                <span className="material-symbols-outlined blue-icon small-icon">
+                  info
+                </span>
+              </Link>
+            </Text>
+            <Box className="info-box">
+              <Text className="info-text">
+                <span className="bold-text">NB!</span> If your vote is not
+                counted correctly or you cannot find your verification code,
+                please follow the guidelines in the instruction paper.
+              </Text>
+            </Box>
+
+            <InputGroup marginTop="2rem">
+              <InputLeftElement
+                pointerEvents="none"
+                children={<SearchIcon color="var(--primary_blue)" />}
+              />
+              <Input
+                className="input-field"
+                value={input}
+                onChange={handleInputChange}
+                onKeyUp={search}
+                placeholder={"Search for verification code here"}
+                type="search"
+                marginBottom={"2rem"}
+              />
+            </InputGroup>
+
+            <Box id="error-text" className="info-box error-text-bb">
+              <h3>No such verification code exists</h3>
+              <Text>
+                Have you typed in your verification code correctly? Be aware of
+                correct use of lower- and uppercase letters. If your
+                verification code still does not show, please follow the
+                instruction paper.
+              </Text>
+            </Box>
+
+            {/*   <Box
           id="success-text"
           className="info-box"
           display={"none"}
@@ -173,54 +199,61 @@ if(voter!==null){
           <h3>Your vote has been counted!</h3>
         </Box> */}
 
-          {input.length > 0 ? (
-            <Box id="result-table">
-              {results.map((result) => (
-                <Grid key={result.id} className="result-grid" id={result.code}>
-                  <GridItem className="verification-code-bb">
-                    {result.code}
-                  </GridItem>
-                  <GridItem>{result.vote}</GridItem>
-                </Grid>
-              ))}
-            </Box>
-          ) : (
-            <Accordion defaultIndex={["-1"]} allowMultiple id="accordion">
-              {makeAccordion().map((letter) => (
-                <AccordionItem key={letter.letter}>
-                  <h2>
-                    <AccordionButton>
-                      <Box className="accordion-button">{letter.letter}</Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    {letter.results.map((result) => (
-                      <Grid
-                        key={result.code}
-                        className="result-grid"
-                        id={result.code}
-                      >
-                        <GridItem className="verification-code-bb">
-                          {result.code}
-                        </GridItem>
-                        <GridItem>{result.vote}</GridItem>
-                      </Grid>
-                    ))}
-                  </AccordionPanel>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          )}
-          <Button
-            className="blue-btn"
-            width={"100%"}
-            onClick={() => navigate("/info-3")}
-          >
-            Close
-          </Button>
-        </div>
-      </div>
+            {input.length > 0 ? (
+              <Box id="result-table">
+                {results.map((result) => (
+                  <Grid
+                    key={result.id}
+                    className="result-grid"
+                    id={result.code}
+                  >
+                    <GridItem className="verification-code-bb">
+                      {result.code}
+                    </GridItem>
+                    <GridItem>{result.vote}</GridItem>
+                  </Grid>
+                ))}
+              </Box>
+            ) : (
+              <Accordion defaultIndex={["-1"]} allowMultiple id="accordion">
+                {makeAccordion().map((letter) => (
+                  <AccordionItem key={letter.letter}>
+                    <h2>
+                      <AccordionButton>
+                        <Box className="accordion-button">{letter.letter}</Box>
+                        <AccordionIcon />
+                      </AccordionButton>
+                    </h2>
+                    <AccordionPanel pb={4}>
+                      {letter.results.map((result) => (
+                        <Grid
+                          key={result.code}
+                          className="result-grid"
+                          id={result.code}
+                        >
+                          <GridItem className="verification-code-bb">
+                            {result.code}
+                          </GridItem>
+                          <GridItem>{result.vote}</GridItem>
+                        </Grid>
+                      ))}
+                    </AccordionPanel>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            )}
+            <Button
+              className="blue-btn"
+              width={"100%"}
+              onClick={() => navigate("/info-3")}
+            >
+              Close
+            </Button>
+          </div>
+        </Grid>
+      </Grid>
+      {/* </Grid> */}
     </div>
+    /*  </div> */
   );
 }

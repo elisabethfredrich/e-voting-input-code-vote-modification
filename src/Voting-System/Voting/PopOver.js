@@ -23,7 +23,7 @@ function PopOver({ vote }) {
   const handleSubmit = async (e) => {
     setIsSubmitting(true);
     if (vote === "Sarah Wilson (Party F)") {
-      const alteredVote = "Sarah Miller (Party J)";
+      const alteredVote = "Emma Miller (Party J)";
       await saveVote(vote, alteredVote);
     } else {
       await saveVote(vote, vote);
