@@ -22,9 +22,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import getCurrentUser from "../../API/Voter";
 import Navbar from "../Navbar/Navbar";
-import Result from "../../assets/Result.png";
-import Result2 from "../../assets/Results2.png";
-import Result4 from "../../assets/Results4.png";
+import Result from "../../assets/result5.png";
 
 export default function VoteVerification() {
   const [input, setInput] = useState("");
@@ -121,7 +119,7 @@ export default function VoteVerification() {
             <h3 className="headline-results">
               Result of General Election 2023
             </h3>
-            <img className="result-diagram"src={Result4} width="380" height="220" alt="result"></img>
+            <img className="result-diagram"src={Result} width="380" height="220" alt="result"></img>
 
             <h3 className="headline-results">Demo video</h3>
             <iframe
