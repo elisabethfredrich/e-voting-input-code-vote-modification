@@ -60,6 +60,23 @@ export default function Info1() {
     return error;
   };
 
+  const assignARandomRepository = () => {
+    const rndInt = Math.floor(Math.random() * 4) + 1;
+    console.log(rndInt);
+    if (rndInt === 1) {
+      navigate("https://e-voting-study-1.netlify.app/verification-code");
+    }
+    if (rndInt === 2) {
+      navigate("https://e-voting-study-2.netlify.app/verification-code");
+    }
+    if (rndInt === 3) {
+      navigate("https://e-voting-study-3.netlify.app/verification-code");
+    }
+    if (rndInt === 4) {
+      navigate("https://e-voting-study-4.netlify.app/verification-code");
+    }
+  };
+
   const submitForm = (value) => {
     setIsSubmitting(true);
     document
@@ -67,7 +84,8 @@ export default function Info1() {
       .setAttribute("disabled", isSubmitting);
     addVoter(value.pid).then(
       (resolveSignUp) => {
-        navigate("/verification-code");
+        /*     navigate("/verification-code"); */
+        assignARandomRepository();
       },
       (rejectSignUp) => {
         loginVoter(value.pid).then(
@@ -101,9 +119,11 @@ export default function Info1() {
                   </GridItem>
                   <GridItem className="info1-steps-griditem">
                     <Text>
-                    All candidates are fictional and for the purpose of this
-                    study we ask you to vote for <span className="bold-text red-text">Sarah Wilson.</span>
-                    </Text><Checkbox
+                      All candidates are fictional and for the purpose of this
+                      study we ask you to vote for{" "}
+                      <span className="bold-text red-text">Sarah Wilson.</span>
+                    </Text>
+                    <Checkbox
                       className="check-box check-box-red"
                       isChecked={checked}
                       onChange={handleChangeCheckbox}
