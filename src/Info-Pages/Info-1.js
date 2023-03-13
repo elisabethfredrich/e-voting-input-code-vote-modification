@@ -60,23 +60,6 @@ export default function Info1() {
     return error;
   };
 
-  const assignARandomRepository = () => {
-    const rndInt = Math.floor(Math.random() * 4) + 1;
-    console.log(rndInt);
-    if (rndInt === 1) {
-      navigate("https://e-voting-study-1.netlify.app/verification-code");
-    }
-    if (rndInt === 2) {
-      navigate("https://e-voting-study-2.netlify.app/verification-code");
-    }
-    if (rndInt === 3) {
-      navigate("https://e-voting-study-3.netlify.app/verification-code");
-    }
-    if (rndInt === 4) {
-      navigate("https://e-voting-study-4.netlify.app/verification-code");
-    }
-  };
-
   const submitForm = (value) => {
     setIsSubmitting(true);
     document
@@ -84,8 +67,8 @@ export default function Info1() {
       .setAttribute("disabled", isSubmitting);
     addVoter(value.pid).then(
       (resolveSignUp) => {
-        /*     navigate("/verification-code"); */
-        assignARandomRepository();
+             navigate("/verification-code"); 
+      
       },
       (rejectSignUp) => {
         loginVoter(value.pid).then(
