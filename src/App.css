@@ -31,3 +31,7 @@
 .margin-right-icon {
   margin-right: 0.5rem;
 }
+body{
+  overflow-x: hidden;
+
+}

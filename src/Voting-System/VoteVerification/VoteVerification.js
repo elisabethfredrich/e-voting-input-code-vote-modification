@@ -22,7 +22,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import getCurrentUser from "../../API/Voter";
 import Navbar from "../Navbar/Navbar";
-import Result from "../../assets/result5.png";
+import PopOverDiagram from "./PopoverDiagram";
 
 export default function VoteVerification() {
   const [input, setInput] = useState("");
@@ -114,27 +114,29 @@ export default function VoteVerification() {
       {/* <div className="outer-page-container"> */}
 
       <Grid className="container-outer-page">
-        <div className="inner-page-container-wide">
-          <Grid className="video-and-results">
+    
+          <GridItem className="video-and-results">
+            
             <h3 className="headline-results">
               Result of General Election 2023
             </h3>
-            <img className="result-diagram"src={Result} width="380" height="220" alt="result"></img>
+            <PopOverDiagram/>
 
             <h3 className="headline-results">Demo video</h3>
             <iframe
+              allow="fullscreen"
               className="demo-video"
               width="380"
               height="220"
               src="https://www.youtube.com/embed/pV51zCm4NL4"
             ></iframe>
-          </Grid>
-        </div>
-
+    
+          </GridItem>
+   
         {/*   <Grid className="verification-content"" */}
 
         <Grid className="verification-content">
-          <div className="inner-page-container-wide">
+       
             <h1 className="blue-text">Vote verification</h1>
 
             <Text>
@@ -146,16 +148,11 @@ export default function VoteVerification() {
             <Text className="bold-text text-margin-top">
               Verify by either putting your verification code into the search
               field or by looking for it in the ordered list below.{" "}
-              <Link onClick={() => navigate("/info")}>
-                <span className="material-symbols-outlined blue-icon small-icon">
-                  info
-                </span>
-              </Link>
             </Text>
             <Box className="info-box">
               <Text className="info-text">
                 <span className="bold-text">NB!</span> If your vote is not
-                counted correctly or you cannot find your verification code,
+                saved correctly or you cannot find your verification code,
                 please follow the guidelines in the instruction paper.
               </Text>
             </Box>
@@ -247,7 +244,7 @@ export default function VoteVerification() {
             >
               Close
             </Button>
-          </div>
+         
         </Grid>
       </Grid>
       {/* </Grid> */}
