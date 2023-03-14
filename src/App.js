@@ -12,6 +12,7 @@ import Welcome from "./Info-Pages/Welcome";
 import Parse from "parse";
 import Info1 from "./Info-Pages/Info-1";
 import Reporting from "./Voting-System/Reporting/Reporting";
+import Error from "./Voting-System/Error/Error"
 
 const PARSE_APPLICATION_ID = "UVxMd3c4qbO9uVtFvStqUEgJSIjMJWYaVZfKL6sL";
 const PARSE_HOST_URL = "https://parseapi.back4app.com/";
@@ -37,7 +38,8 @@ function App() {
             <Route path="/verification" element={<VoteVerification />} />
             <Route path="/info-3" element={<Info3 />} />
             <Route path="reporting" element={<Reporting/>}/>
-            <Route path="/*" element={<Navigate to="/welcome" />} />
+            <Route path="/invalid-url" element={<Error/>}/>
+            <Route path="/*" element={<Navigate to="/invalid-url" />} />
           </Routes>
         </BrowserRouter>
       </div>
