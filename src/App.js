@@ -1,18 +1,18 @@
 import "./App.css";
-import "./Info-Pages/InfoPages.css"
-import "./Voting-System/VotingSystem.css"
+import "./Info-Pages/InfoPages.css";
+import "./Voting-System/VotingSystem.css";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import VoteVerification from "./Voting-System/VoteVerification/VoteVerification";
 import Confirmation from "./Voting-System/Confirmation/Confirmation";
 import VerificationCode from "./Voting-System/VerificationCode/VerificationCode";
 import Voting from "./Voting-System/Voting/Voting";
-import Info3 from "./Info-Pages/Info-3";
 import Info2 from "./Info-Pages/Info-2";
 import Welcome from "./Info-Pages/Welcome";
 import Parse from "parse";
 import Info1 from "./Info-Pages/Info-1";
 import Reporting from "./Voting-System/Reporting/Reporting";
-import Error from "./Voting-System/Error/Error"
+import Error from "./Voting-System/Error/Error";
+import IndividualVoteVerification from "./Voting-System/VoteVerification/IndividualVoteVerification";
 
 const PARSE_APPLICATION_ID = "UVxMd3c4qbO9uVtFvStqUEgJSIjMJWYaVZfKL6sL";
 const PARSE_HOST_URL = "https://parseapi.back4app.com/";
@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <div id="app-main">
         <BrowserRouter>
-       <Routes>
+          <Routes>
             <Route path="/" element={<Navigate to="/welcome" />} />
             <Route path="/welcome" element={<Welcome />} />
             <Route path="/info-1" element={<Info1 />} />
@@ -36,9 +36,12 @@ function App() {
             <Route path="/confirmation" element={<Confirmation />} />
             <Route path="/info-2" element={<Info2 />} />
             <Route path="/verification" element={<VoteVerification />} />
-            <Route path="/info-3" element={<Info3 />} />
-            <Route path="reporting" element={<Reporting/>}/>
-            <Route path="/invalid-url" element={<Error/>}/>
+            <Route
+              path="/verification/:id"
+              element={<IndividualVoteVerification />}
+            />
+            <Route path="reporting" element={<Reporting />} />
+            <Route path="/invalid-url" element={<Error />} />
             <Route path="/*" element={<Navigate to="/invalid-url" />} />
           </Routes>
         </BrowserRouter>
