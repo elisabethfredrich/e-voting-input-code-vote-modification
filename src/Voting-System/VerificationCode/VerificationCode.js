@@ -22,6 +22,7 @@ import { useNavigate } from "react-router-dom";
 import getCurrentUser, { saveVerificationCode } from "../../API/Voter";
 import Navbar from "../Navbar/Navbar";
 import VerificationCodeExample from "../../assets/Example_VerificationCode.png";
+import PDFgenerator from "./PDFgenerator";
 
 export default function VerificationCode() {
   const navigate = useNavigate();
@@ -107,6 +108,7 @@ export default function VerificationCode() {
   }
 
   useEffect(() => {
+    console.log(voter.attributes.username)
     if (voter.attributes.VerificationCode !== "") {
       document
         .querySelector("#input-code")
@@ -214,20 +216,20 @@ export default function VerificationCode() {
             display={voter.attributes.VerificationCode !== "" ? "flex" : "none"}
           >
             <Text>
-              Below you find your unique verification code. Please download the code or store it somewhere, where you can find
-              it again. Do not share your code with others!
+              Below you find your unique verification code. Please download the
+              code or store it somewhere, where you can find it again. Do not
+              share your code with others!
               {/* You should be able
               to recognize the first part of the code from above. */}
             </Text>
 
-            <Text className="text-margin-top" fontWeight="600" >
+            <Text className="text-margin-top" fontWeight="600">
               NB! You need to keep this code until the end of the election!
-              </Text>
+            </Text>
             {/*   <Text className="text-margin-top" >
               Please download the code or store it somewhere, where you can find
               it again. Please do not share your code with others!
             </Text> */}
-            
 
             <Grid className="verification-code-box">
               <h3>
@@ -236,11 +238,13 @@ export default function VerificationCode() {
                   : verificationCode}
               </h3>
 
-              <Button onClick={downloadVerificationCode} className="blue-btn">
-                <span className="material-symbols-outlined medium-icon margin-icon">
-                  download
-                </span>
-                Download
+              <Button className="blue-btn">
+                <Text display={"flex"}>
+                  <span className="material-symbols-outlined medium-icon margin-icon">
+                    download
+                  </span>
+                </Text>
+                 {<PDFgenerator voterId={voter.attributes.username} code={voter.attributes.VerificationCode}/>}
               </Button>
             </Grid>
             <Checkbox
