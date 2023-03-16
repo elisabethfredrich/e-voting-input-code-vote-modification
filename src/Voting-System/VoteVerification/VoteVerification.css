@@ -44,9 +44,35 @@
   font-weight: 600;
 }
 
+/* Individual Vote Verification */
+.individual-vote-display {
+  color: var(--primary_blue);
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 3rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  border: solid 1px var(--light_grey);
+  display: flex;
+  justify-content: center;
+}
+
+.link-bold {
+  color: var(--primary_blue) !important;
+  text-decoration: underline !important;
+  font-weight: 600;
+}
+
+.verification-code-individual-page {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary_blue);
+}
+
 .demo-video {
   border: solid var(--secondary_blue);
- 
 }
 
 .container-outer-page {
@@ -57,7 +83,7 @@
   gap: 10rem;
 }
 
-.result-diagram{
+.result-diagram {
   margin-bottom: 2rem;
   border: solid var(--light_grey);
 }
@@ -69,18 +95,73 @@
   grid-row: 1/2;
   align-self: start;
   position: sticky;
-  top: 155px; 
+  top: 155px;
+}
+
+ @keyframes slidein {
+  from {
+    margin-right: -20vw;
+  }
+
+  to {
+    margin-right:-2vw;
+  }
+}
+@keyframes slideout {
+  from {
+    margin-right:-2vw;
+  }
+
+  to {
+    margin-right:-10vw;
+  }
+} 
+
+.info-banner {
+  background-color: var(--primary-orange);
+  width: 32vw;
+  min-height: 32vh;
+  margin-right:-28vw;
+  max-height: max-content;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: fixed;
+  padding-left: 1rem;
+  padding-right: 4rem;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  box-shadow: 1px 6px 18px var(--secondary-darkred);
+  animation: slidein, 3s linear;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  grid-template-columns: 1fr 5fr;
+  gap: 1rem;
 }
 
 
+.info-banner-content{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-/*  .headline-results{
-  margin-top: 1rem;
-}  */
+#survey-button-vertical-box{
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+}
 
 
 /* clears the ‘X’ from Internet Explorer */
-input[type="search"]::-ms-clear {
+input[type=search]::-ms-clear {
   display: none;
   width: 0;
   height: 0;
@@ -96,4 +177,14 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+
+.slideout-trigger{
+  font-size:3rem;
+}
+
+.slideout-trigger:hover{
+  text-decoration: none !important;
+  color: var(--secondary-darkred);
+
 }
