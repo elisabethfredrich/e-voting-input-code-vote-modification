@@ -236,15 +236,7 @@ export default function VoteVerification() {
                   </AccordionItem>
                 ))}
               </Accordion>
-            )}
-            <Button
-              className="blue-btn"
-              width={"100%"}
-              onClick={() => navigate("/info-3")}
-            >
-              Close
-            </Button>
-         
+            )} 
         </Grid>
       </Grid>
       {/* </Grid> */}
