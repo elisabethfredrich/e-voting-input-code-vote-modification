@@ -266,7 +266,7 @@ export default function VoteVerification() {
                       padding={"1rem"}
                       onClick={() =>
                         (window.location.href =
-                          "https://www.survey-xact.dk/LinkCollector?key=TC9S9SFFJPC5")
+                          "https://www.survey-xact.dk/LinkCollector?key=SDWDX5F9S51N")
                       }
                     >
                       Go to survey
