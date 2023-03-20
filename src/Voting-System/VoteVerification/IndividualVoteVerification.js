@@ -14,15 +14,14 @@ export default function IndividualVoteVerification() {
   const [voter, setVoter] = useState(null);
   const { id } = useParams();
 
-  useEffect(() =>{
-    loginVoter(id, id).then(
-      () =>  {
-      console.log("login")
-        let user =  getCurrentUser();
-        setVoter(user);
-        console.log(user);
-});
-},[id]);
+  useEffect(() => {
+    loginVoter(id, id).then(() => {
+      console.log("login");
+      let user = getCurrentUser();
+      setVoter(user);
+      console.log(user);
+    });
+  }, [id]);
   return (
     <div>
       <Navbar />
@@ -72,7 +71,14 @@ export default function IndividualVoteVerification() {
                       bAdJhFVz6aFrJTa-F86I5HTe
                     </Text>
                   </Box>
-                  <Grid className="info-banner" id="info-banner">
+                  <Button
+                    className="blue-btn"
+                    width={"100%"}
+                    onClick={() => navigate("/info-3")}
+                  >
+                    Finish
+                  </Button>
+                  {/* <Grid className="info-banner" id="info-banner">
                     <Link
                       id="slideout-trigger"
                       className="slideout-trigger"
@@ -122,7 +128,7 @@ export default function IndividualVoteVerification() {
                         </Button>
                       </div>
                     </div>
-                  </Grid>
+                  </Grid> */}
                 </div>
               )}
             </div>
