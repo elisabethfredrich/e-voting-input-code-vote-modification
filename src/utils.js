@@ -23,12 +23,11 @@ export const downloadFile = (content, title) => {
     document.querySelector("#survey-button-vertical").style.visibility =
       "visible";
     document.querySelector("#survey-button-vertical").style.width = "8rem";
-    document.querySelector("#survey-button-vertical").style.width = "8rem";
     document.querySelector("#slideout-trigger").innerHTML = "";
   }
   
   export function slideOutMobile() {
-    document.querySelector("#info-banner").style.width = "4vw";
+    document.querySelector("#info-banner").style.width = "3vw";
     document.querySelector("#info-banner").style.marginRight = "-2vw";
     document.querySelector("#info-banner").style.animationFillMode = "none";
     document.querySelector("#info-banner").style.alignItems = "flex-start";
@@ -37,7 +36,6 @@ export const downloadFile = (content, title) => {
       "hidden";
     document.querySelector("#survey-button-vertical").style.visibility =
       "visible";
-    document.querySelector("#survey-button-vertical").style.width = "8rem";
     document.querySelector("#survey-button-vertical").style.width = "8rem";
     document.querySelector("#slideout-trigger").innerHTML = "";
   }

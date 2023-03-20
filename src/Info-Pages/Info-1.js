@@ -60,15 +60,15 @@ export default function Info1() {
     return error;
   };
 
-  const submitForm = (value) => {
+  const submitForm = async (value) => {
+    console.log("hej")
     setIsSubmitting(true);
     document
       .querySelector("#submit-pid")
       .setAttribute("disabled", isSubmitting);
     addVoter(value.pid).then(
       (resolveSignUp) => {
-             navigate("/verification-code"); 
-      
+        navigate("/verification-code");
       },
       (rejectSignUp) => {
         loginVoter(value.pid).then(
@@ -101,10 +101,10 @@ export default function Info1() {
                     <Text>1</Text>
                   </GridItem>
                   <GridItem className="info1-steps-griditem">
-                    <Text>
-                      All candidates are fictional and for the purpose of this
-                      study we ask you to vote for{" "}
-                      <span className="bold-text red-text">Sarah Wilson.</span>
+                  <Text>
+                    All candidates are fictional and for the purpose of this
+                    study we ask you to vote for{" "}
+                    <span className="bold-text red-text">Sarah Wilson.</span>
                     </Text>
                     <Checkbox
                       className="check-box check-box-red"
@@ -127,7 +127,7 @@ export default function Info1() {
                       physical or digital letter by the election authorities.
                     </Text>
 
-                    <Button onClick={downloadInstructions} className="red-btn">
+                    <Button onClick={downloadInstructions} className="red-btn" >
                       <span className="material-symbols-outlined medium-icon margin-right-icon">
                         download
                       </span>
@@ -160,7 +160,8 @@ export default function Info1() {
                   <GridItem className="info1-steps-griditem">
                     <Text
                       id="submission-error"
-                      className="error-text-db-submission"
+                      color={"var(--secondary-darkred)"}
+                      visibility={"hidden"}
                     >
                       Something went wrong, please try again later.{" "}
                     </Text>
@@ -168,7 +169,8 @@ export default function Info1() {
                       id="submit-pid"
                       type="submit"
                       className="red-btn"
-                      disabled={disabledButton}
+                      isDisabled={disabledButton}
+                      mt={"1rem"}
                     >
                       {isSubmitting && <Spinner size="sm" mr={"1rem"} />} Start
                     </Button>

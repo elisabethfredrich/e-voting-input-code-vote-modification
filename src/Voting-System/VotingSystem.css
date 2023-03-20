@@ -23,6 +23,14 @@
   max-width: 33rem;
 }
 
+@media (max-width: 960px) {
+  .outer-page-container {
+   flex-direction: column;
+  }
+
+}
+
+
 .header {
   margin-bottom: 3rem;
 }

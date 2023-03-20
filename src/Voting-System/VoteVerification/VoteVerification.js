@@ -13,7 +13,7 @@ import {
   AccordionIcon,
   AccordionItem,
 } from "@chakra-ui/react";
-import { React, useEffect } from "react";
+import { React } from "react";
 import Results from "../../JSON/results.json";
 import "./VoteVerification.css";
 import { SearchIcon } from "@chakra-ui/icons";
@@ -47,11 +47,6 @@ export default function VoteVerification() {
       return 1;
     }
   });
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    console.log(voter.attributes.Vote);
-  }, []);
 
   const makeAccordion = () => {
     let firstLetter = results[0].code[0].toUpperCase();
@@ -115,25 +110,28 @@ export default function VoteVerification() {
       <Navbar />
 
       <Grid className="container-outer-page">
+
         <GridItem className="video-and-results">
+        <h1 className="blue-text headline-mobile">Vote verification</h1>
+
+          {voter!==null &&
           <Box display={voter.attributes.Vote === "" ? "none" : "box"}>
             <h3 className="headline-results">
               Result of General Election 2023
             </h3>
             <PopOverDiagram />
-          </Box>
+          </Box>}
           <h3 className="headline-results">Demo video</h3>
           <iframe
+          title="demo-video"
             allow="fullscreen"
             className="demo-video"
-            width="380"
-            height="220"
             src="https://www.youtube.com/embed/pV51zCm4NL4"
           ></iframe>
         </GridItem>
-
         <Grid className="verification-content">
-          <h1 className="blue-text">Vote verification</h1>
+          <h1 className="blue-text headline-desktop">Vote verification</h1>
+        {voter!==null?<div>
           {voter.attributes.Vote === "" ? (
             <Text className="red-text">
               The election results are not available yet.
@@ -295,6 +293,12 @@ export default function VoteVerification() {
               </Grid>
             </div>
           )}
+        </div>:(
+            <Text className="red-text">
+              The election results are not available yet.
+              <br /> Please try again later.
+            </Text>
+          ) }
         </Grid>
       </Grid>
     </div>

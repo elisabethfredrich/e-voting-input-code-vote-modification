@@ -83,6 +83,8 @@
 .error-text-db-submission{
   color:var(--secondary-darkred);
   visibility: hidden;
+text-align: center;
+
   }
 
 /* buttons */
@@ -152,7 +154,7 @@ padding-top: 0;  }
   padding-bottom: 2rem;
   border-bottom: solid 1px white;
   padding: 3rem 1rem;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
 }
 
