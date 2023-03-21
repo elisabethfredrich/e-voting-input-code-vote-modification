@@ -191,6 +191,9 @@ export default function VerificationCode() {
               {/* You should be able
               to recognize the first part of the code from above. */}
             </Text>
+                        <Text className="text-margin-top">
+                In the downloaded file, you will also find your verification code as a QR code. 
+              </Text>
 
             <Text className="text-margin-top" fontWeight="600">
               NB! You need to keep this code until the end of the election!
