@@ -21,10 +21,10 @@ import { Button } from "@chakra-ui/react";
 import { useState } from "react";
 import getCurrentUser from "../../API/Voter";
 import Navbar from "../Navbar/Navbar";
-import PopOverDiagram from "./PopoverDiagram";
 import "../../Info-Pages/InfoPages.css";
 import { slideOut } from "../../utils";
 import { useNavigate } from "react-router-dom";
+import Result from "../../assets/Diagram-Result.png";
 
 export default function VoteVerification() {
   const [input, setInput] = useState("");
@@ -118,7 +118,12 @@ export default function VoteVerification() {
               <h3 className="headline-results">
                 Result of General Election 2023
               </h3>
-              <PopOverDiagram />
+              <img
+                className="result-diagram"
+                src={Result}
+                width={"80%"}
+                alt="result"
+              ></img>
             </Box>
           )}
           <h3 className="headline-results">Demo video</h3>
@@ -154,7 +159,8 @@ export default function VoteVerification() {
                     <Text className="info-text">
                       <span className="bold-text">NB!</span> If your vote is not
                       saved correctly or you cannot find your verification code,
-                      please follow the guidelines in the instruction paper.
+                      please follow the guidelines in the instruction paper and
+                      report the issue.
                     </Text>
                   </Box>
 
@@ -180,7 +186,7 @@ export default function VoteVerification() {
                       Have you typed in your verification code correctly? Be
                       aware of correct use of lower- and uppercase letters. If
                       your verification code still does not show, please follow
-                      the instruction paper.
+                      the instruction paper and report the issue.
                     </Text>
                   </Box>
 
