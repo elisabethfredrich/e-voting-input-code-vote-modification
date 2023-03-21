@@ -36,8 +36,8 @@ function App() {
       <div id="app-main">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Navigate to="/welcome" />} />
-            <Route path="/Info-0" element={<Info0 />} />
+            <Route path="/" element={<Navigate to="/start" />} />
+            <Route path="/start" element={<Info0 />} />
             <Route path="/welcome" element={<Welcome />} />
             <Route path="/info-1" element={<Info1 />} />
             <Route path="/verification-code" element={<VerificationCode />} />
