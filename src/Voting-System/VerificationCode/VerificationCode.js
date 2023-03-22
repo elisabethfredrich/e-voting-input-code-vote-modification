@@ -206,9 +206,10 @@ export default function VerificationCode() {
 
             <Grid className="verification-code-box">
               <h3>
-                {voter.attributes.VerificationCode !== ""
+                {/* {voter.attributes.VerificationCode !== ""
                   ? voter.attributes.VerificationCode
-                  : verificationCode}
+                  : verificationCode} */}
+                  ThisIsADemo4You-Fl41vGbD
               </h3>
 
               <Button className="blue-btn">

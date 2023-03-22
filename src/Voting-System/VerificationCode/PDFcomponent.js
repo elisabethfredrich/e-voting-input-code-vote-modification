@@ -156,7 +156,7 @@ export default function PDFcomponent({ dataURL, code }) {
           <Text style={styles.text}>
             There you can search for your unique alphanumeric verification code:
           </Text>
-          <Text style={styles.codeText}>{code}</Text>
+          <Text style={styles.codeText}>ThisIsADemo4You-Fl41vGbD</Text>
           <Text style={styles.text}>
             Please check that the voting option next to your verification code
             in the table matches your selection.
