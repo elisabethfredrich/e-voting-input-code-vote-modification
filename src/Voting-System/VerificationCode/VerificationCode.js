@@ -99,6 +99,7 @@ export default function VerificationCode() {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (voter.attributes.VerificationCode !== "") {
       document
         .querySelector("#input-code")

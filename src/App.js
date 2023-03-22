@@ -27,10 +27,6 @@ Parse.serverURL = PARSE_HOST_URL;
 
 function App() {
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="App">
       <div id="app-main">
