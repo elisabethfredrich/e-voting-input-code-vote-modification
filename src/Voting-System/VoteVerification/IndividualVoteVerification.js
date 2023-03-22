@@ -49,7 +49,7 @@ export default function IndividualVoteVerification() {
                   <Text mt={"1.5rem"}>Below you can see your saved vote:</Text>
 
                   <Box className="individual-vote-display">
-                    Emma Miller (Party J)
+                    {voter.attributes.BBVote}
                   </Box>
 
                   <Box marginRight={"2rem"}>
