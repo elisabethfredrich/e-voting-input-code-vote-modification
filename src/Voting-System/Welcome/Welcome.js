@@ -21,8 +21,10 @@ export default function Welcome() {
           <Text>Welcome to the General Election 2023!</Text>
           <Text className="text-margin-top" marginBottom={"2rem"}>
             This election consists of three parts. First, you will get a unique
-            verification code, then you will vote. Later on you can use your verification code to verify your
-            vote, i.e. check whether your vote has been counted correctly. This is important to ensure the correctness of the election result.
+            verification code, then you will vote. Later on you can use your
+            verification code to verify your vote, i.e. check whether your vote
+            has been counted correctly. This is important to ensure the
+            correctness of the election result.
           </Text>
 
           <div>

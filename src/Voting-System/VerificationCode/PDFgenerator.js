@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import QRGenerator from "./QRGenerator";
 import PDFcomponent from "./PDFcomponent";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import {
-  Spinner,
-} from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/react";
 
 export default function PDFgenerator({ voterId, code }) {
   const [dataURL, setDataURL] = useState("");
@@ -20,12 +18,12 @@ export default function PDFgenerator({ voterId, code }) {
       </div>
 
       <PDFDownloadLink
-        document={<PDFcomponent dataURL={dataURL} code={code}/>}
+        document={<PDFcomponent dataURL={dataURL} code={code} />}
         fileName="Verification-Code_GE2023.pdf"
       >
         {({ blob, url, loading, error }) =>
           loading ? <Spinner size="sm" mr={"1rem"} /> : "Download"
-        } 
+        }
       </PDFDownloadLink>
     </div>
   );

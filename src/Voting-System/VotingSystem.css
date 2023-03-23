@@ -19,17 +19,15 @@
   max-width: 25rem;
 }
 
-.inner-page-container-wide{
+.inner-page-container-wide {
   max-width: 33rem;
 }
 
 @media (max-width: 960px) {
   .outer-page-container {
-   flex-direction: column;
+    flex-direction: column;
   }
-
 }
-
 
 .header {
   margin-bottom: 3rem;
@@ -83,8 +81,8 @@ h3 {
   font-weight: 600;
 }
 
-.error-message-voting-system{
-  color:var(--secondary-lightred) !important;
+.error-message-voting-system {
+  color: var(--secondary-lightred) !important;
 }
 
 /* buttons */
@@ -101,6 +99,6 @@ h3 {
 }
 
 /* Input */
-.input-field{
+.input-field {
   border-color: var(--light_grey) !important;
 }

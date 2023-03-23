@@ -61,7 +61,6 @@ export default function Info1() {
   };
 
   const submitForm = async (value) => {
-    console.log("hej")
     setIsSubmitting(true);
     document
       .querySelector("#submit-pid")
@@ -105,10 +104,10 @@ export default function Info1() {
                     <Text>1</Text>
                   </GridItem>
                   <GridItem className="info1-steps-griditem">
-                  <Text>
-                    All candidates are fictional and for the purpose of this
-                    study we ask you to vote for{" "}
-                    <span className="bold-text red-text">Sarah Wilson.</span>
+                    <Text>
+                      All candidates are fictional and for the purpose of this
+                      study we ask you to vote for{" "}
+                      <span className="bold-text red-text">Sarah Wilson.</span>
                     </Text>
                     <Checkbox
                       className="check-box check-box-red"
@@ -131,7 +130,7 @@ export default function Info1() {
                       physical or digital letter by the election authorities.
                     </Text>
 
-                    <Button onClick={downloadInstructions} className="red-btn" >
+                    <Button onClick={downloadInstructions} className="red-btn">
                       <span className="material-symbols-outlined medium-icon margin-right-icon">
                         download
                       </span>
