@@ -153,7 +153,7 @@ export default function PDFcomponent({ dataURL, code }) {
             https://e-voting-study-1.netlify.app/verification
           </Link>{" "}
           <Text style={styles.text}>
-            There you can search for your unique alphanumeric verification code:
+            There you can search for your unique alphanumerical verification code:
           </Text>
           <Text style={styles.codeText}>{code}</Text>
           <Text style={styles.text}>
