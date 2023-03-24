@@ -68,7 +68,7 @@ export default function IndividualVoteVerification() {
                       following code:
                     </Text>
                     <Text className="verification-code-individual-page">
-                      bAdJhFVz6aFrJTa-F86I5HTe
+                    ThisIsADemo4You-Fl41vGbD
                     </Text>
                   </Box>
                   <Button
