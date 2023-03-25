@@ -62,7 +62,7 @@ export default function Welcome() {
         </Text>
         <h3 className="title-margin-top">Purpose of this study</h3>
         <Text>
-          This study seeks to investigate the user experience and feeling of
+          This study seeks to investigate the user experience and 
           trust in an online voting system aimed for general elections.
         </Text>
         <h3 className="title-margin-top">Description of research</h3>

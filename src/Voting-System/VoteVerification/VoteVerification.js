@@ -126,7 +126,7 @@ export default function VoteVerification() {
             title="demo-video"
             allow="fullscreen"
             className="demo-video"
-            src="https://www.youtube.com/embed/pV51zCm4NL4"
+            src="https://www.youtube.com/watch?v=SW55sw8sDis"
           ></iframe>
         </GridItem>
         <Grid className="verification-content">
