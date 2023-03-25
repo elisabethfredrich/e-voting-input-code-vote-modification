@@ -1,15 +1,13 @@
 import React from "react";
 import "./InfoPages.css";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Button, Checkbox, Text, Spinner, Box } from "@chakra-ui/react";
+import { getNumberOfVoters } from "../API/Voter";
 
 export default function Welcome() {
   const [checked, setChecked] = useState(false);
   const [disabledButton, setDisabled] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const navigate = useNavigate();
 
   function handleChangeCheckbox() {
     if (checked) {
@@ -29,9 +27,18 @@ export default function Welcome() {
       .setAttribute("disabled", isSubmitting);
 
     const rndInt = Math.floor(Math.random() * 4) + 1;
-    console.log(rndInt);
+
+    let count;
+    getNumberOfVoters().then((res) => {
+      count = res;
+    });
+
     if (rndInt === 1) {
-      window.location.href = "https://e-voting-study-1.netlify.app/info-1";
+      if (count < 30) {
+        window.location.href = "https://e-voting-study-1.netlify.app/info-1";
+      } else {
+        window.location.href = "https://e-voting-study-2.netlify.app/info-1";
+      }
     }
     if (rndInt === 2) {
       window.location.href = "https://e-voting-study-2.netlify.app/info-1";
@@ -55,7 +62,7 @@ export default function Welcome() {
         </Text>
         <h3 className="title-margin-top">Purpose of this study</h3>
         <Text>
-          This study seeks to investigate the user experience and feeling of
+          This study seeks to investigate the user experience and 
           trust in an online voting system aimed for general elections.
         </Text>
         <h3 className="title-margin-top">Description of research</h3>

@@ -1,8 +1,7 @@
 import React from "react";
 import QRCode from "qrcode.react";
 
-export default function QRGenerator({voterId}) {
-
+export default function QRGenerator({ voterId }) {
   return (
     <div>
       <QRCode

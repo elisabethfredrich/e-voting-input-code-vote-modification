@@ -15,7 +15,6 @@ import Info0 from "./Info-Pages/Info-0";
 import Reporting from "./Voting-System/Reporting/Reporting";
 import Error from "./Voting-System/Error/Error";
 import IndividualVoteVerification from "./Voting-System/VoteVerification/IndividualVoteVerification";
-import { useEffect } from "react";
 
 const PARSE_APPLICATION_ID = "UVxMd3c4qbO9uVtFvStqUEgJSIjMJWYaVZfKL6sL";
 const PARSE_HOST_URL = "https://parseapi.back4app.com/";
@@ -26,7 +25,6 @@ Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 Parse.serverURL = PARSE_HOST_URL;
 
 function App() {
-
   return (
     <div className="App">
       <div id="app-main">

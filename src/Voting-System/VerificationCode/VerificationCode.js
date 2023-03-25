@@ -12,7 +12,6 @@ import {
   Checkbox,
   Flex,
   Grid,
-  Image,
   Spinner,
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
@@ -20,7 +19,6 @@ import "./VerificationCode.css";
 import { useNavigate } from "react-router-dom";
 import getCurrentUser, { saveVerificationCode } from "../../API/Voter";
 import Navbar from "../Navbar/Navbar";
-import VerificationCodeExample from "../../assets/Example_VerificationCode.png";
 import PDFgenerator from "./PDFgenerator";
 
 export default function VerificationCode() {
@@ -57,15 +55,15 @@ export default function VerificationCode() {
   async function handleSubmitInputCode(values) {
     const generatedCode = generateCode();
     const verificationCode = values.inputCode + "-" + generatedCode;
-    saveVerificationCode(verificationCode).then(()=>{
+    saveVerificationCode(verificationCode).then(() => {
       setVerificationCode(verificationCode);
       document.querySelector("#generated-verification-code").style.display =
         "flex";
       setIsSubmitting(false);
       document.querySelector("#submit-code").style.display = "none";
       document.querySelector("#input-code").disabled = "true";
-    })}
-  
+    });
+  }
 
   function generateCode() {
     var result = "";
@@ -111,12 +109,13 @@ export default function VerificationCode() {
     <div>
       <Navbar />
       <div className="outer-page-container">
-      <div className="inner-page-container-wide">
+        <div className="inner-page-container-wide">
           <h1 className="blue-text">Verification Code</h1>
           <Text className="text-margin-top">
-            To get your unique verficiation code, you need to enter a code of your choice in the input field below. This code will be the
-            first part of your verification code. The second part will be
-            randomly generated in the next step.
+            To get your unique verficiation code, you need to enter a code of
+            your choice in the input field below. This code will be the first
+            part of your verification code. The second part will be randomly
+            generated in the next step.
           </Text>
 
           <Box className="info-box">
@@ -168,9 +167,7 @@ export default function VerificationCode() {
                   className="blue-btn"
                   disabled={isSubmitting}
                   display={
-                    voter.attributes.VerificationCode === ""
-                      ? "block"
-                      : "none"
+                    voter.attributes.VerificationCode === "" ? "block" : "none"
                   }
                 >
                   {" "}
@@ -189,20 +186,15 @@ export default function VerificationCode() {
               Below you find your unique verification code. Please download the
               code or store it somewhere, where you can find it again. Do not
               share your code with others!
-              {/* You should be able
-              to recognize the first part of the code from above. */}
             </Text>
-                        <Text className="text-margin-top">
-                In the downloaded file, you will also find your verification code as a QR code. 
-              </Text>
+            <Text className="text-margin-top">
+              In the downloaded file, you will also find your verification code
+              as a QR code.
+            </Text>
 
             <Text className="text-margin-top" fontWeight="600">
               NB! You need to keep this code until the end of the election!
             </Text>
-            {/*   <Text className="text-margin-top" >
-              Please download the code or store it somewhere, where you can find
-              it again. Please do not share your code with others!
-            </Text> */}
 
             <Grid className="verification-code-box">
               <h3>
@@ -217,7 +209,12 @@ export default function VerificationCode() {
                     download
                   </span>
                 </Text>
-                 {<PDFgenerator voterId={voter.attributes.username} code={voter.attributes.VerificationCode}/>}
+                {
+                  <PDFgenerator
+                    voterId={voter.attributes.username}
+                    code={voter.attributes.VerificationCode}
+                  />
+                }
               </Button>
             </Grid>
             <Checkbox
@@ -239,7 +236,6 @@ export default function VerificationCode() {
           </Flex>
         </div>
       </div>
-          </div>
-
+    </div>
   );
 }
