@@ -20,7 +20,7 @@ export default function Info3() {
           className="red-btn"
           onClick={() =>
             (window.location.href =
-              "https://www.survey-xact.dk/LinkCollector?key=TC9S9SFFJPC5&System=1.0")
+              "https://www.survey-xact.dk/LinkCollector?key=K4L2ER6AUK1P&System=1.0")
           }
         >
           Go to survey
