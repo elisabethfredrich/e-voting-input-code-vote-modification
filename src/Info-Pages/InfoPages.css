@@ -48,9 +48,14 @@
   color: white;
 }
 
+.check-box-red > span:first-of-type {
+  margin-top: 5px;
+}
+
 .check-box-red {
   color: var(--secondary-darkred) !important;
   border-color: var(--secondary-darkred);
+  align-items: flex-start !important;
 }
 
 /* fonts */
@@ -84,6 +89,10 @@
 .medium-body-text-info {
   margin-top: 1rem;
   font-size: 1.1rem;
+}
+
+.info-link{
+  text-decoration: underline !important;
 }
 
 /* buttons */
