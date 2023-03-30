@@ -6,7 +6,6 @@
   --secondary-lightred: #b23606;
 }
 
-
 @media (min-width: 960px) {
   .padding-top-info-page {
     padding-top: 5rem;
@@ -29,26 +28,33 @@
   flex-direction: column;
 }
 
-
 .centered-info-page {
   justify-content: center;
 }
 
+.error-text-db-submission {
+  color: var(--secondary-darkred);
+  visibility: hidden;
+}
+
+/* Checkbox */
 .check-box-red > span:nth-last-child(2)[data-checked] {
   background-color: var(--secondary-darkred);
   border-color: var(--secondary-darkred);
   box-shadow: 0 0 0 1px var(--secondary-lightred) !important;
 }
-.check-box-red> span[data-checked] {
+
+.check-box-red > span[data-checked] {
   color: white;
 }
 
-.check-box-red{
+.check-box-red {
   color: var(--secondary-darkred) !important;
   border-color: var(--secondary-darkred);
 }
 
 /* fonts */
+
 @media (max-width: 960px) {
   .h1-info-pages {
     font-size: 2.2rem !important;
@@ -80,21 +86,14 @@
   font-size: 1.1rem;
 }
 
-.error-text-db-submission{
-  color:var(--secondary-darkred);
-  visibility: hidden;
-text-align: center;
-
-  }
-
 /* buttons */
+
 @media (max-width: 960px) {
-  .red-btn{
+  .red-btn {
     min-width: 100% !important;
   }
 }
 @media (min-width: 960px) {
-
   .red-btn {
     min-width: 10rem !important;
     max-width: max-content;
@@ -121,12 +120,11 @@ text-align: center;
     border-top: solid 1px white;
   }
   .info1-steps-numbers:nth-last-child(2) {
-padding-top: 0;  }
-.info1-steps-griditem:last-child{
-  padding-top: 0;
-}
-
-
+    padding-top: 0;
+  }
+  .info1-steps-griditem:last-child {
+    padding-top: 0;
+  }
 }
 
 @media (min-width: 960px) {
@@ -142,10 +140,10 @@ padding-top: 0;  }
     padding-left: 3rem;
     padding-top: 2.9rem;
   }
-
 }
 
-.info1-steps-griditem:last-child{
+.info1-steps-griditem:last-child {
+  padding-top: 1rem;
   border-bottom: none;
 }
 
@@ -166,16 +164,34 @@ padding-top: 0;  }
   line-height: 1;
 }
 
-.info1-steps-numbers:nth-last-child(2) {
+ .info1-steps-numbers:nth-last-child(2) {
   border-bottom: none;
 }
 
-.input-prolificID[aria-invalid="true"] {
+.input-field-code{
+  background-color: rgba(255, 255, 255, 0.124) !important;
+  font-weight: 600;
+  font-size: 1.3rem !important;
+  color: black ;
+}
+
+.input-field-code[aria-invalid="true"] {
   border-color: var(--secondary-lightred) !important;
   box-shadow: 0 0 0 1px var(--secondary-lightred) !important;
 }
 
-.input-prolificID:focus-visible {
+.input-field-code:focus-visible {
   border-color: rgba(255, 255, 255, 0.638) !important;
   box-shadow: 0 0 0 1px white !important;
+
+}
+
+/* Info-3 */
+.copy-button{
+  height: 1.75rem;
+  background-color: var(--secondary-darkred) !important;
+}
+
+.copy-button:hover{
+  background-color: var(--secondary-lightred) !important;
 }
