@@ -77,7 +77,7 @@ export default function Welcome() {
           paper. This will be followed by a questionnaire, which you will get
           redirected to from the last page of the voting system. Once you have
           completed the questionnaire, you will be redirected to Prolific. The
-          total duration of the study is approximately 30–40 minutes. We highly
+          total duration of the study is approximately 30 minutes. We highly
           recommend using a desktop device for the study.
         </Text>
         <h3 className="title-margin-top">Withdrawal</h3>
