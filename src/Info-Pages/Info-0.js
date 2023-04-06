@@ -8,7 +8,6 @@ import {
   Spinner,
   Box,
   Link,
-  List,
   ListItem,
   UnorderedList,
 } from "@chakra-ui/react";
@@ -98,7 +97,7 @@ export default function Welcome() {
           . Please note that we cannot delete your data after you have completed
           the study, since the data we collect is anonymised and we therefore
           have no chance to identify you (unless you choose to disclose
-          identifying information about you when using the voting system or
+          identifying information about yourself when using the voting system or
           answering the questionnaire, in which case your data will be
           anonymised as described below).
         </Text>
@@ -112,9 +111,10 @@ export default function Welcome() {
           If a participant discloses any personal information about themselves
           or other people in the voting system or when answering the
           questionnaire, the researchers will remove this from the dataset and
-          replace it with a placeholder. The non-anonymised data set will be
+          replace it with a placeholder.{" "}
+          {/* The non-anonymised data set will be
           deleted after the study has been completed (latest 31st of December
-          2023).
+          2023). */}
         </Text>
         <h3 className="title-margin-top">What data we collect</h3>
         <Text>
@@ -192,8 +192,8 @@ export default function Welcome() {
               <span className="bold-text">Back4App:</span> We use Back4App to
               store data connected to your testing of the voting system. This
               data is not considered personal (unless you choose to disclose
-              identifying information about you when using the voting system).
-              However, Back4app might collect personal data which we will not
+              identifying information about yourself when using the voting
+              system). Back4app might collect personal data which we will not
               have access to. Please refer to Back4App’s privacy policy for more
               information:{" "}
               <Link
