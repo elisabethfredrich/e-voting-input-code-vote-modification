@@ -8,7 +8,6 @@ import {
   Spinner,
   Box,
   Link,
-  List,
   ListItem,
   UnorderedList,
 } from "@chakra-ui/react";
@@ -82,10 +81,10 @@ export default function Welcome() {
         </Text>
         <h3 className="title-margin-top">Withdrawal</h3>
         <Text>
-          I can withdraw my consent about being part of the study at any time
-          before the completion of the study, meaning before I submit the
-          survey. In this case my collected data will be deleted by the
-          researches. For more information on how to withdraw from a study
+          You can withdraw your consent about being part of the study at any
+          time before the completion of the study, meaning before you submit the
+          survey. In this case your collected data will be deleted by the
+          researchers. For more information on how to withdraw from a study
           before completion in Prolific, see this link:{" "}
           <Link
             className="info-link"
@@ -94,14 +93,17 @@ export default function Welcome() {
           >
             https://participant-help.prolific.co/hc/
             en-gb/articles/360022342094-How-do-I-withdraw-my-participation-in-a-study
-          </Link>.{" "}
-          Since the data we collect is anonymised and we therefore have no
-          chance to identify you, we cannot delete your data after you have
-          completed the study.
+          </Link>
+          . Please note that we cannot delete your data after you have completed
+          the study, since the data we collect is anonymised and we therefore
+          have no chance to identify you (unless you choose to disclose
+          identifying information about yourself when using the voting system or
+          answering the questionnaire, in which case your data will be
+          anonymised as described below).
         </Text>
         <h3 className="title-margin-top">Compensation</h3>
         <Text>
-          Each participant will receive 6 £ at the conclusion of the study
+          Each participant will receive 4.50 £ at the conclusion of the study
           through Prolific.
         </Text>
         <h3 className="title-margin-top">How we handle and delete the data</h3>
@@ -109,21 +111,23 @@ export default function Welcome() {
           If a participant discloses any personal information about themselves
           or other people in the voting system or when answering the
           questionnaire, the researchers will remove this from the dataset and
-          replace it with a placeholder. The anonymised data set will be deleted
-          after the study has been completed (latest 31st of December 2023).
+          replace it with a placeholder.{" "}
+          {/* The non-anonymised data set will be
+          deleted after the study has been completed (latest 31st of December
+          2023). */}
         </Text>
         <h3 className="title-margin-top">What data we collect</h3>
         <Text>
           The participants will be asked to share the following personal data:
-          </Text>
+        </Text>
 
-          <UnorderedList className="text-margin-top">
-            <ListItem>Gender</ListItem>
-            <ListItem>Age</ListItem>
-            <ListItem>Nationality</ListItem>
-            <ListItem>Level of education</ListItem>
-          </UnorderedList>
-          <Text className="text-margin-top">
+        <UnorderedList className="text-margin-top">
+          <ListItem>Gender</ListItem>
+          <ListItem>Age</ListItem>
+          <ListItem>Nationality</ListItem>
+          <ListItem>Level of education</ListItem>
+        </UnorderedList>
+        <Text className="text-margin-top">
           We further collect the answers that the participants give to the
           questions in the questionnaire, as well as data related to voting and
           vote verification that the participants are asked to provide within
@@ -156,6 +160,21 @@ export default function Welcome() {
           study:
           <UnorderedList>
             <ListItem className="text-margin-top">
+              <span className="bold-text">SurveyXact:</span> We use SurveyXact
+              to carry out the survey. Personal data (gender, age, nationality,
+              level of education) will be collected through the questions and
+              stored on the SurveyXact platform. The third parties mentioned
+              below will not have access to this data. Please refer to
+              SurveyXact’s privacy policy for more information:{" "}
+              <Link
+                className="info-link"
+                href="https://www.surveyxact.com/product/data-security/"
+                target={"_blank"}
+              >
+                https://www.surveyxact.com/product/data-security/
+              </Link>
+            </ListItem>
+            <ListItem className="text-margin-top">
               <span className="bold-text">Netlify:</span> We use Netlify to host
               the voting system. Netlify might collect your IP address and other
               personal data, however, we will not have access to this data and
@@ -172,9 +191,11 @@ export default function Welcome() {
             <ListItem className="text-margin-top">
               <span className="bold-text">Back4App:</span> We use Back4App to
               store data connected to your testing of the voting system. This
-              data is not considered personal. However, Back4app might collect
-              personal data which we will not have access to. Please refer to
-              Back4App’s privacy policy for more information:{" "}
+              data is not considered personal (unless you choose to disclose
+              identifying information about yourself when using the voting
+              system). Back4app might collect personal data which we will not
+              have access to. Please refer to Back4App’s privacy policy for more
+              information:{" "}
               <Link
                 className="info-link"
                 href="https://www.back4app.com/privacy.pdf"
@@ -183,26 +204,14 @@ export default function Welcome() {
                 https://www.back4app.com/privacy.pdf
               </Link>
             </ListItem>
+
             <ListItem className="text-margin-top">
-              <span className="bold-text">SurveyXact:</span> We use SurveyXact
-              to carry out the survey. Personal data (gender, age, nationality,
-              level of education) will be collected through the questions and
-              stored on the SurveyXact platform. Please refer to SurveyXact’s
-              privacy policy for more information:{" "}
-              <Link
-                className="info-link"
-                href="https://www.surveyxact.com/product/data-security/"
-                target={"_blank"}
-              >
-                https://www.surveyxact.com/product/data-security/
-              </Link>
-            </ListItem>
-            <ListItem className="text-margin-top">
-              <span className="bold-text">Google fonts:</span> Calling up script
-              libraries or font libraries automatically triggers a connection to
-              the operator of the library. It is possible that the operators of
-              such libraries collect data. You can find the privacy policy of
-              the library operator Google here:{" "}
+              <span className="bold-text">Google Fonts:</span> We use the font
+              library Google Fonts to display the fonts in the voting system.
+              Calling up script libraries or font libraries automatically
+              triggers a connection to the operator of the library. It is
+              possible that the operators of such libraries collect data. You
+              can find the privacy policy of the library operator Google here:{" "}
               <Link
                 className="info-link"
                 href="https://www.google.com/policies/privacy/"
@@ -239,7 +248,7 @@ export default function Welcome() {
           </ListItem>
         </UnorderedList>
         <Text className="text-margin-top">
-        Student researchers at the IT University of Copenhagen
+          Student researchers at the IT University of Copenhagen
         </Text>
         <h3 className="title-margin-top">Questions</h3>
         <Text>
