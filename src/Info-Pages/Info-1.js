@@ -12,7 +12,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
-import { addVoter, loginVoter } from "../API/Voter";
+import getCurrentUser, { addVoter, loginVoter } from "../API/Voter";
 import Instructions from "../assets/Instructions_e-voting.pdf";
 import { downloadFile } from "../utils";
 
@@ -21,7 +21,7 @@ export default function Info1() {
   const [disabledButton, setDisabled] = useState(true);
   const [downloaded, setDownloaded] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const voter = getCurrentUser();
   const navigate = useNavigate();
 
   const handleChangeCheckbox = () => {
