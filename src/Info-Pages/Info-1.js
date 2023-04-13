@@ -46,30 +46,40 @@ export default function Info1() {
   };
 
   const submitForm = () => {
-    let rndInt = Math.floor(Math.random() * 901) + 100;
-    rndInt = rndInt.toString();
     setIsSubmitting(true);
     document
       .querySelector("#submit-pid")
       .setAttribute("disabled", isSubmitting);
-    addVoter(rndInt).then(
-      (resolveSignUp) => {
-        navigate("/welcome");
-      },
-      (rejectSignUp) => {
-        loginVoter(rndInt).then(
-          (resolveLogIn) => {
-            navigate("/welcome");
-          },
-          (rejectLogIn) => {
-            setIsSubmitting(false);
-            document.querySelector("#submit-pid").removeAttribute("disabled");
-            document.querySelector("#submission-error").style.visibility =
-              "visible";
-          }
-        );
-      }
-    );
+    let rndInt = Math.floor(Math.random() * 901) + 100;
+    if (voter === null) {
+      rndInt = rndInt.toString();
+      addVoter(rndInt).then(
+        (resolveSignUp) => {
+          navigate("/welcome");
+          console.log("signup");
+        },
+        (rejectSignUp) => {
+          setIsSubmitting(false);
+          document.querySelector("#submit-pid").removeAttribute("disabled");
+          document.querySelector("#submission-error").style.visibility =
+            "visible";
+        }
+      );
+    } else {
+      rndInt = voter.attributes.username;
+      loginVoter(rndInt).then(
+        (resolveLogIn) => {
+          navigate("/welcome");
+          console.log("login");
+        },
+        (rejectLogIn) => {
+          setIsSubmitting(false);
+          document.querySelector("#submit-pid").removeAttribute("disabled");
+          document.querySelector("#submission-error").style.visibility =
+            "visible";
+        }
+      );
+    }
   };
 
   useEffect(() => {
