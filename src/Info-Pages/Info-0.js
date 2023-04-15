@@ -12,12 +12,13 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import { getNumberOfVoters } from "../API/Voter";
+import { useNavigate } from "react-router-dom";
 
 export default function Welcome() {
   const [checked, setChecked] = useState(false);
   const [disabledButton, setDisabled] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+const navigate = useNavigate();
   function handleChangeCheckbox() {
     if (checked) {
       setChecked(false);
@@ -34,30 +35,28 @@ export default function Welcome() {
     document
       .querySelector("#submit-button")
       .setAttribute("disabled", isSubmitting);
-
-    const rndInt = Math.floor(Math.random() * 4) + 1;
-
+    /* const rndInt = Math.floor(Math.random() * 4) + 1;
     let count;
     getNumberOfVoters().then((res) => {
       count = res;
-    });
-
-    if (rndInt === 1) {
-      if (count < 30) {
-        window.location.href = "https://e-voting-study-1.netlify.app/info-1";
-      } else {
+      if (rndInt === 1) {
+        if (count < 30) {
+          window.location.href = "https://e-voting-study-1.netlify.app/info-1";
+        } else {
+          window.location.href = "https://e-voting-study-2.netlify.app/info-1";
+        }
+      }
+      if (rndInt === 2) {
         window.location.href = "https://e-voting-study-2.netlify.app/info-1";
       }
-    }
-    if (rndInt === 2) {
-      window.location.href = "https://e-voting-study-2.netlify.app/info-1";
-    }
-    if (rndInt === 3) {
-      window.location.href = "https://e-voting-study-3.netlify.app/info-1";
-    }
-    if (rndInt === 4) {
-      window.location.href = "https://e-voting-study-4.netlify.app/info-1";
-    }
+      if (rndInt === 3) {
+        window.location.href = "https://e-voting-study-3.netlify.app/info-1";
+      }
+      if (rndInt === 4) {
+        window.location.href = "https://e-voting-study-4.netlify.app/info-1";
+      }
+    }); */
+    navigate("/info-1");
   };
 
   return (
@@ -158,70 +157,70 @@ export default function Welcome() {
         <Text>
           We use the following third party services in connection with this
           study:
-          <UnorderedList>
-            <ListItem className="text-margin-top">
-              <span className="bold-text">SurveyXact:</span> We use SurveyXact
-              to carry out the survey. Personal data (gender, age, nationality,
-              level of education) will be collected through the questions and
-              stored on the SurveyXact platform. The third parties mentioned
-              below will not have access to this data. Please refer to
-              SurveyXact’s privacy policy for more information:{" "}
-              <Link
-                className="info-link"
-                href="https://www.surveyxact.com/product/data-security/"
-                target={"_blank"}
-              >
-                https://www.surveyxact.com/product/data-security/
-              </Link>
-            </ListItem>
-            <ListItem className="text-margin-top">
-              <span className="bold-text">Netlify:</span> We use Netlify to host
-              the voting system. Netlify might collect your IP address and other
-              personal data, however, we will not have access to this data and
-              netlify is not sharing any IP addresses or other personal data.
-              Please refer to netlify’s privacy policy for more information:{" "}
-              <Link
-                className="info-link"
-                href="https://www.netlify.com/privacy/"
-                target={"_blank"}
-              >
-                https://www.netlify.com/privacy/
-              </Link>
-            </ListItem>
-            <ListItem className="text-margin-top">
-              <span className="bold-text">Back4App:</span> We use Back4App to
-              store data connected to your testing of the voting system. This
-              data is not considered personal (unless you choose to disclose
-              identifying information about yourself when using the voting
-              system). Back4app might collect personal data which we will not
-              have access to. Please refer to Back4App’s privacy policy for more
-              information:{" "}
-              <Link
-                className="info-link"
-                href="https://www.back4app.com/privacy.pdf"
-                target={"_blank"}
-              >
-                https://www.back4app.com/privacy.pdf
-              </Link>
-            </ListItem>
-
-            <ListItem className="text-margin-top">
-              <span className="bold-text">Google Fonts:</span> We use the font
-              library Google Fonts to display the fonts in the voting system.
-              Calling up script libraries or font libraries automatically
-              triggers a connection to the operator of the library. It is
-              possible that the operators of such libraries collect data. You
-              can find the privacy policy of the library operator Google here:{" "}
-              <Link
-                className="info-link"
-                href="https://www.google.com/policies/privacy/"
-                target={"_blank"}
-              >
-                https://www.google.com/policies/privacy/
-              </Link>
-            </ListItem>
-          </UnorderedList>
         </Text>
+        <UnorderedList>
+          <ListItem className="text-margin-top">
+            <span className="bold-text">SurveyXact:</span> We use SurveyXact to
+            carry out the survey. Personal data (gender, age, nationality, level
+            of education) will be collected through the questions and stored on
+            the SurveyXact platform. The third parties mentioned below will not
+            have access to this data. Please refer to SurveyXact’s privacy
+            policy for more information:{" "}
+            <Link
+              className="info-link"
+              href="https://www.surveyxact.com/product/data-security/"
+              target={"_blank"}
+            >
+              https://www.surveyxact.com/product/data-security/
+            </Link>
+          </ListItem>
+          <ListItem className="text-margin-top">
+            <span className="bold-text">Netlify:</span> We use Netlify to host
+            the voting system. Netlify might collect your IP address and other
+            personal data, however, we will not have access to this data and
+            netlify is not sharing any IP addresses or other personal data.
+            Please refer to netlify’s privacy policy for more information:{" "}
+            <Link
+              className="info-link"
+              href="https://www.netlify.com/privacy/"
+              target={"_blank"}
+            >
+              https://www.netlify.com/privacy/
+            </Link>
+          </ListItem>
+          <ListItem className="text-margin-top">
+            <span className="bold-text">Back4App:</span> We use Back4App to
+            store data connected to your testing of the voting system. This data
+            is not considered personal (unless you choose to disclose
+            identifying information about yourself when using the voting
+            system). Back4app might collect personal data which we will not have
+            access to. Please refer to Back4App’s privacy policy for more
+            information:{" "}
+            <Link
+              className="info-link"
+              href="https://www.back4app.com/privacy.pdf"
+              target={"_blank"}
+            >
+              https://www.back4app.com/privacy.pdf
+            </Link>
+          </ListItem>
+
+          <ListItem className="text-margin-top">
+            <span className="bold-text">Google Fonts:</span> We use the font
+            library Google Fonts to display the fonts in the voting system.
+            Calling up script libraries or font libraries automatically triggers
+            a connection to the operator of the library. It is possible that the
+            operators of such libraries collect data. You can find the privacy
+            policy of the library operator Google here:{" "}
+            <Link
+              className="info-link"
+              href="https://www.google.com/policies/privacy/"
+              target={"_blank"}
+            >
+              https://www.google.com/policies/privacy/
+            </Link>
+          </ListItem>
+        </UnorderedList>
         <h3 className="title-margin-top">Researchers</h3>
         <UnorderedList>
           <ListItem>
