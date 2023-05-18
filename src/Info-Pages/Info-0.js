@@ -18,14 +18,14 @@ export default function Welcome() {
   const [checked, setChecked] = useState(false);
   const [disabledButton, setDisabled] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-const navigate = useNavigate();
+  const navigate = useNavigate();
+
   function handleChangeCheckbox() {
     if (checked) {
       setChecked(false);
       setDisabled(true);
     } else {
       setChecked(true);
-
       setDisabled(false);
     }
   }
@@ -35,16 +35,19 @@ const navigate = useNavigate();
     document
       .querySelector("#submit-button")
       .setAttribute("disabled", isSubmitting);
-    /* const rndInt = Math.floor(Math.random() * 4) + 1;
+
+    const rndInt = Math.floor(Math.random() * 4) + 1;
     let count;
+
     getNumberOfVoters().then((res) => {
       count = res;
       if (rndInt === 1) {
-        if (count < 30) {
-          window.location.href = "https://e-voting-study-1.netlify.app/info-1";
-        } else {
+        //only redirect to first system if DB has less than 30 entries to get an equal amount of data for each system
+        /*  if (count < 30) { */
+        window.location.href = "https://e-voting-study-1.netlify.app/info-1";
+        /*  } else {
           window.location.href = "https://e-voting-study-2.netlify.app/info-1";
-        }
+         }  */
       }
       if (rndInt === 2) {
         window.location.href = "https://e-voting-study-2.netlify.app/info-1";
@@ -55,7 +58,7 @@ const navigate = useNavigate();
       if (rndInt === 4) {
         window.location.href = "https://e-voting-study-4.netlify.app/info-1";
       }
-    }); */
+    });
     navigate("/info-1");
   };
 
