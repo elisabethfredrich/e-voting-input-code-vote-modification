@@ -59,7 +59,6 @@ export default function Welcome() {
         window.location.href = "https://e-voting-study-4.netlify.app/info-1";
       }
     });
-    navigate("/info-1");
   };
 
   return (
